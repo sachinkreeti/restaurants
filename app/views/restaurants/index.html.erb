@@ -1,18 +1,30 @@
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
+<!-- app/views/restaurants/index.html.erb -->
+
+<div class="container mt-5">
+  <h1 class="mb-4">Restaurant Reviews</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= restaurant.name %></h5>
+            <p class="card-text"><strong>Location:</strong> <%= restaurant.location %></p>
+            <p class="card-text"><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+            <p class="card-text"><strong>Rating:</strong> <%= restaurant.rating %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>All Ratings:</strong>
+              <% restaurant.reviews.each do |review| %>
+                <%= content_tag(:span, review.rating, class: "badge bg-secondary me-1") %>
+              <% end %>
+            </li>
+          </ul>
+          <div class="card-footer">
+            <%= link_to "View Reviews", restaurant, class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<p style="color: green"><%= notice %></p>
-
-<h1>Restaurants</h1>
-
-<div id="restaurants">
-  <% @restaurants.each do |restaurant| %>
-    <%= render restaurant %>
-    <p>
-      <%= link_to "Show this restaurant", restaurant %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New restaurant", new_restaurant_path %>
