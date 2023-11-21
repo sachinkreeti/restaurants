@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews or /reviews.json
   def index
-    @reviews = Review.all
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reviews = @restaurant.reviews.all
   end
 
   # GET /reviews/1 or /reviews/1.json
