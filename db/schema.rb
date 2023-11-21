@@ -31,11 +31,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_21_201110) do
   end
 
   create_table "ingredients", force: :cascade do |t|
+    t.integer "restaurant_id"
     t.string "name"
     t.float "quantity"
     t.string "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_ingredients_on_restaurant_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -118,15 +120,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_21_201110) do
   end
 
   create_table "suppliers", force: :cascade do |t|
+    t.integer "restaurant_id"
     t.string "name"
     t.string "contact_person"
     t.string "contact_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_suppliers_on_restaurant_id"
   end
 
   add_foreign_key "employees", "restaurants"
   add_foreign_key "events", "restaurants"
+  add_foreign_key "ingredients", "restaurants"
   add_foreign_key "menus", "restaurants"
   add_foreign_key "orders", "restaurants"
   add_foreign_key "payments", "orders"
@@ -134,4 +139,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_21_201110) do
   add_foreign_key "reservation_guests", "reservations"
   add_foreign_key "reservations", "restaurants"
   add_foreign_key "reviews", "restaurants"
+  add_foreign_key "suppliers", "restaurants"
 end
