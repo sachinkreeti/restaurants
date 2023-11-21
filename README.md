@@ -1,37 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Version
 
-Things you may want to cover:
+Rails 7.0.8
+Ruby 3.0.6
+NodeJs v18.17.1
 
-* Ruby version
+## Application setup
 
-* System dependencies
+- Setup the rails application
+- Create Database - rails db:create
+- Migrate Database - rails db:migrate
+- Generate seed data - rails db:seed
 
-* Configuration
+## Scaffold the application
 
-* Database creation
+You don't need to do anything here. These were the commands used to scaffold this application.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Scaffold the main Restaurant resource
 
 rails generate scaffold Restaurant name:string location:string cuisine:string rating:float
 
+### Scaffold Review resource associated with Restaurant
+
 rails generate scaffold Review restaurant:references content:text rating:integer user_name:string
+
+### Scaffold Menu resource associated with Restaurant
 
 rails generate scaffold Menu restaurant:references dish_name:string price:decimal category:string
 
-rails generate scaffold Reservation restaurant:references reservation_date:datetime party_size:integer user_name:string
+### Scaffold Reservation resource associated with Restaurant
 
-## Scaffold
+rails generate scaffold Reservation restaurant:references reservation_date:datetime party_size:integer user_name:string
 
 ### Scaffold Employee resource associated with Restaurant
 
@@ -64,7 +64,3 @@ rails generate scaffold Promotion restaurant:references name:string start_date:d
 ### Scaffold ReservationGuest resource associated with Reservation
 
 rails generate scaffold ReservationGuest reservation:references guest_name:string contact_number:string email:string
-
-### After generating the scaffolds, run the migrations
-
-rails db:migrate
