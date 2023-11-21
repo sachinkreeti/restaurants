@@ -20,7 +20,7 @@ end
 
 # Seed Restaurants
 restaurants = []
-10_000.times do |i|
+1000.times do |i|
   restaurants << Restaurant.create!(
     name: "Restaurant #{i + 1}",
     location: Faker::Address.city,
@@ -90,15 +90,6 @@ restaurants.each do |restaurant|
       order_date: random_date_within_range(1.month.ago, Time.current),
       total_amount: rand(50.0..500.0).round(2)
     )
-
-    # Seed Order Items (linked to Menu items)
-    restaurant.menus.sample(rand(1..5)).each do |menu_item|
-      order.order_items.create!(
-        menu_id: menu_item.id,
-        quantity: rand(1..5),
-        subtotal: menu_item.price * rand(1..5)
-      )
-    end
   end
 
   # Seed Payments
