@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant: one
+  reservation_date: 2023-11-22 01:40:21
+  party_size: 1
+  user_name: MyString
+
+two:
+  restaurant: two
+  reservation_date: 2023-11-22 01:40:21
+  party_size: 1
+  user_name: MyString

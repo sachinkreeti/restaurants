@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant: one
+  name: MyString
+  date: 2023-11-22 01:40:59
+  description: MyText
+
+two:
+  restaurant: two
+  name: MyString
+  date: 2023-11-22 01:40:59
+  description: MyText

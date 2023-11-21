@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant: one
+  name: MyString
+  start_date: 2023-11-22 01:41:05
+  end_date: 2023-11-22 01:41:05
+  discount_percentage: 1
+
+two:
+  restaurant: two
+  name: MyString
+  start_date: 2023-11-22 01:41:05
+  end_date: 2023-11-22 01:41:05
+  discount_percentage: 1
