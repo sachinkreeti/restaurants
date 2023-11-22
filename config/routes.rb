@@ -1,4 +1,10 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   resources :reservation_guests
   resources :promotions
   resources :events
