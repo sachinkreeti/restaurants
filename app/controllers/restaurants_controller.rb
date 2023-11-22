@@ -3,11 +3,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants or /restaurants.json
   def index
-    result = Benchmark.measure do
-      @restaurants = Restaurant.all
-    end
-
-    Rails.logger.info("Index Page Load Time: #{result.real} seconds")
+    @restaurants = Restaurant.all
   end
 
   # GET /restaurants/1 or /restaurants/1.json
