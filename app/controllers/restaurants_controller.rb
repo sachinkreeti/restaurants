@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants or /restaurants.json
   def index
-    @restaurants = Restaurant.includes(:reviews).all
+    @restaurants = Restaurant.page(params[:page]).per(30)
   end
 
   # GET /restaurants/1 or /restaurants/1.json
