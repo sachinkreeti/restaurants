@@ -9,9 +9,18 @@ NodeJs v18.17.1
 ## Application setup
 
 - Setup the rails application
-- Create Database - rails db:create
-- Migrate Database - rails db:migrate
-- Generate seed data - rails db:seed
+
+```sh
+  rails db:create # create Database
+  rails db:setup # migrate Database
+```
+
+If you run into any issue related to database, you can always drop the database and start again
+
+```sh
+  rails db:drop
+  rails db:setup
+```
 
 ## Scaffold the application
 

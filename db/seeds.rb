@@ -20,7 +20,7 @@ end
 
 # Seed Restaurants
 restaurants = []
-100.times do |i|
+1000.times do |i|
   restaurants << Restaurant.create!(
     name: "Restaurant #{i + 1}",
     location: Faker::Address.city,
