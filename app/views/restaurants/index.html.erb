@@ -3,6 +3,9 @@
 <div class="container mt-5">
   <h1 class="mb-4">Restaurants</h1>
 
+  <!-- Add link to create a new restaurant -->
+  <%= link_to "Create a New Restaurant", new_restaurant_path, class: "btn btn-primary mb-3" %>
+
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <% @restaurants.each do |restaurant| %>
       <div class="col">

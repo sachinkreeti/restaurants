@@ -25,6 +25,9 @@ class RestaurantsController < ApplicationController
 
     respond_to do |format|
       if @restaurant.save
+        # send mail to HR@example.com
+        RestaurantMailer.restaurant_created_email(@restaurant).deliver_now
+
         format.html { redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully created." }
         format.json { render :show, status: :created, location: @restaurant }
       else
