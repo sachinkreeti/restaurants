@@ -1,0 +1,14 @@
+EAGER LOADING (for 100 restaurants)
+
+Without Eager Loading - 101 SQL calls, 130ms
+event	duration (ms)	from start (ms)	query time (ms)
+GET http://localhost:3000/	27.9	+0.0
+  Executing: restaurants#index	2.7	+25.0
+   Rendering: restaurants/index.html.erb	100.2	+25.8	101 sql	44.6
+
+
+With Eager Loading - 2 SQL calls (4ms) - 60ms
+event	duration (ms)	from start (ms)	query time (ms)
+GET http://localhost:3000/	23.1	+1.0
+  Executing: restaurants#index	4.9	+22.0
+   Rendering: restaurants/index.html.erb	27.2	+23.8	2 sql	4.3
